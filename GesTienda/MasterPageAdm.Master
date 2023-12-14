@@ -36,9 +36,7 @@
                        <Nodes>
                            <asp:TreeNode Text="Inicio" Value="Inicio" NavigateUrl="~/InicioUsuario.aspx"></asp:TreeNode>
                            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Productos" Value="Productos">
-                               <asp:TreeNode Text="Tipos de productos" Value="Ver Productos" NavigateUrl="~/TiposVer.aspx"></asp:TreeNode>
-                               <asp:TreeNode NavigateUrl="~/ProductosPorTipoVer.aspx" Text="Productos por Tipo" Value="Ver Productos por Tipo"></asp:TreeNode>
-                               <asp:TreeNode NavigateUrl="~/ProductosVer.aspx" Text="Productos" Value="Productos"></asp:TreeNode>
+                               <asp:TreeNode Text="Mantener productos" Value="Mantener productos" NavigateUrl="~/ProductosMantener.aspx"></asp:TreeNode>
                            </asp:TreeNode>
                            <asp:TreeNode Text="Ventas" Value="Ventas">
                                <asp:TreeNode Text="Pedidos por cliente" Value="Pedidos por cliente" NavigateUrl="~/PedidosPorCliente.aspx"></asp:TreeNode>

@@ -83,3 +83,34 @@
 .verticalMitad {
     vertical-align: middle;
 }
+
+.mantenimientotabla {
+    width: 50%;
+    float: left;
+}
+
+.mantenimientolabel {
+    float: left;
+    margin: 30px;
+}
+
+.mantenimientolabel  .tablacontroles {
+    display: table;
+}
+.mantenimientolabel .linea {
+    display: table-row;
+}
+
+.mantenimientolabel .etiqueta, .mantenimientolabel .control {
+    display: table-cell;
+    padding: 3px;
+}
+
+.mantenimientolabel .etiqueta {
+    text-align: right;
+}
+
+.mantenimientolabel .botones {
+    text-align: center;
+    margin: 5px;
+}
