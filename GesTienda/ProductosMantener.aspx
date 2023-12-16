@@ -5,11 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="InfoContenido" runat="server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [PRODUCTO]"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdUnidad] FROM [UNIDAD]"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [DesTip] FROM [TIPO]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [DesTip], [IdTipo] FROM [TIPO]"></asp:SqlDataSource>
     <div class="contenidotitulo">
         Mantenimiento productos</div>
     <br />
-    <asp:GridView CssClass="mantenimientotabla" ID="grdProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="IdProducto" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="50%">
+    <asp:GridView CssClass="mantenimientotabla" ID="grdProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="IdProducto" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="50%" OnSelectedIndexChanged="grdProductos_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
@@ -71,18 +71,18 @@
                     <asp:Label ID="lblIdTipo" runat="server" AssociatedControlID="ddlIdTipo" Text="Tipo Producto" Font-Bold="True"></asp:Label>
                 </div>
                 <div class="control" >
-                    <asp:DropDownList ID="ddlIdTipo" runat="server" Enabled="false" DataSourceID="SqlDataSource3" DataTextField="DesTip"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlIdTipo" runat="server" Enabled="False" DataSourceID="SqlDataSource3" DataTextField="DesTip" DataValueField="IdTipo"></asp:DropDownList>
                 </div>
             </div>
         </div>     
         <div class="botones">
-            <asp:Button ID="btnNuevo" Text="Nuevo" runat="server" />
-            <asp:Button ID="btnEditar" Text="Editar" runat="server" Visible="false"/>
-            <asp:Button ID="btnEliminar" Text="Eliminar" runat="server" Visible="false"/>
-            <asp:Button ID="btnInsertar" Text="Insertar" runat="server" Visible="false"/>
-            <asp:Button ID="btnModificar" Text="Modificar" runat="server" Visible="false"/>
-            <asp:Button ID="btnBorrar" Text="Borrar" runat="server" Visible="false"/>
-            <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" Visible="false"/>
+            <asp:Button ID="btnNuevo" Text="Nuevo" runat="server" OnClick="btnNuevo_Click" />
+            <asp:Button ID="btnEditar" Text="Editar" runat="server" Visible="false" OnClick="btnEditar_Click"/>
+            <asp:Button ID="btnEliminar" Text="Eliminar" runat="server" Visible="false" OnClick="btnEliminar_Click"/>
+            <asp:Button ID="btnInsertar" Text="Insertar" runat="server" Visible="false" OnClick="btnInsertar_Click"/>
+            <asp:Button ID="btnModificar" Text="Modificar" runat="server" Visible="false" OnClick="btnModificar_Click"/>
+            <asp:Button ID="btnBorrar" Text="Borrar" runat="server" Visible="false" OnClick="btnBorrar_Click"/>
+            <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" Visible="false" OnClick="btnCancelar_Click"/>
         </div>
         <asp:Label ID="lblResultado" runat="server"></asp:Label>
         <br />
