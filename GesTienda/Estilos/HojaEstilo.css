@@ -114,3 +114,12 @@
     text-align: center;
     margin: 5px;
 }
+
+.registro td:first-child {
+    text-align:right;
+    font-weight: bold;
+}
+
+.registro td {
+    padding: 5px;
+}

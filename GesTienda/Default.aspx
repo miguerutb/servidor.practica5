@@ -74,6 +74,7 @@
                     </table>
                 </LayoutTemplate>
             </asp:Login>
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Registrarse.aspx">Registrarse</asp:LinkButton>
             <br />
             <asp:Label ID="lblMensajes" runat="server"/>
         </div>
